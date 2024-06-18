@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 {% load static %}
 
 <div class="row bg-black">
@@ -31,22 +30,20 @@
 
     {% for project in projects %}
     <div class="col-md-4 p-4">
-        <div class="card bg-black card-project">
-            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="card_img_top" />
+        <div class="card bg-black text-white card-project">
+            <img src="{{ project.image.url }}" alt="Imagen del proyecto {{ project.title }}" class="card-img-top" />
             <div class="card-body">
 
                 <h2>{{ project.title }}</h2>
                 <p>{{ project.description }}</p>
-
                 {% if project.url %}
-                <a href="{{ project.url }}" class="btn btn-light rounder-0 btn-sm" target="_blank">{{project.url}}</a>
-
+                <a href="{{ project.url }}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{ project.url }}</a>
                 {% endif %}
             </div>
         </div>
     </div>
-
-
     {% endfor %}
-    {% endblock %}
+
 </div>
+
+{% endblock %}
